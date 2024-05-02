@@ -34,7 +34,7 @@ function copy(encode_final_value, decode_final_value) {
 
 function notification() {
     copied.innerText = "Copied";
-    copied.style.transform = "translateX(20px)";
+    copied.style.transform = "translateX(-20px)";
     copied.style.transitionDuration = "0.5s";
     setTimeout(removeNotification, 2000)
 }
@@ -46,10 +46,7 @@ copy_btn2.addEventListener("click", function () {
     notification();
 });
 
-
-
 function removeNotification() {
-    copied.style.transform = "translateX(180px)";
+    copied.style.transform = "translateX(-180px)";
     copied.style.transitionDuration = "0.5s";
 }
-

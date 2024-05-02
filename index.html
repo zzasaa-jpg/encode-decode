@@ -19,7 +19,8 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            overflow: hidden;
+            padding: 0;
+            margin: 0;
         }
 
         main {
@@ -105,7 +106,8 @@
         div h1 {
             cursor: grab;
         }
-        #copied{
+
+        #copied {
             position: absolute;
             width: 120px;
             height: 40px;
@@ -117,11 +119,11 @@
             border: 1px solid white;
             border-radius: 5px;
             box-shadow: 0 0 10px #00FF00;
-            top: 50px;
-            right: 50px;
-            transform: translateX(180px);
+            top: 20px;
+            left: 50px;
+            transform: translateX(-180px);
         }
-        
+
         @media only screen and (max-width: 580px) {
 
             body,
@@ -132,7 +134,7 @@
             main {
                 flex-direction: column;
                 align-items: normal;
-                /* padding: 5px; */
+                padding: 5px;
             }
 
             input {
@@ -153,9 +155,9 @@
             #arrow {
                 display: none;
             }
-            #copied{
-                transform: translateX(290px);
-                top: 20px;
+
+            #copied {
+                transform: translateX(-180px);
             }
         }
     </style>
@@ -180,7 +182,6 @@
     <h1 id="copied">copied</h1>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
     <script src="main.js"></script>
 </body>
 
