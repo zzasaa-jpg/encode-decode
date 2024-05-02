@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            background-color: #111;
+            color: white;
+        }
+
+        body,
+        html {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        input {
+            background-color: #383030;
+            outline: none;
+            border: none;
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 5px;
+        }
+
+        #encode_value {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 28px;
+            width: 200px;
+            overflow-x: scroll;
+            border: 1px solid grey;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        #decode_value {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 28px;
+            width: 200px;
+            overflow-x: scroll;
+            border: 1px solid grey;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        ::-webkit-scrollbar {
+            background-color: #111;
+            height: 5px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: white;
+            border-radius: 5px;
+        }
+
+        #copy {
+            font-size: 28px;
+            display: flex;
+            outline: none;
+            border: 1px solid white;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 30px;
+            padding: 1.5px;
+        }
+
+        #copy2 {
+            font-size: 28px;
+            display: flex;
+            outline: none;
+            border: 1px solid white;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 30px;
+            padding: 1.5px;
+        }
+
+        #main2 {
+            display: flex;
+            gap: 60px;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        div h1 {
+            cursor: grab;
+        }
+        #copied{
+            position: absolute;
+            width: 120px;
+            height: 40px;
+            font-size: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+            border: 1px solid white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px #00FF00;
+            top: 50px;
+            right: 50px;
+            transform: translateX(180px);
+        }
+        
+        @media only screen and (max-width: 580px) {
+
+            body,
+            html {
+                align-items: normal;
+            }
+
+            main {
+                flex-direction: column;
+                align-items: normal;
+                /* padding: 5px; */
+            }
+
+            input {
+                width: auto;
+            }
+
+            #main2 {
+                display: flex;
+                gap: 0;
+            }
+
+            #encode_value,
+            #decode_value {
+                font-size: 24px;
+                width: 100%;
+            }
+
+            #arrow {
+                display: none;
+            }
+            #copied{
+                transform: translateX(290px);
+                top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <input type="text" id="encode" placeholder="Enter the Encoding txet">
+        <ion-icon id="arrow" name="swap-horizontal-outline"></ion-icon>
+        <input type="text" id="decode" placeholder="Enter the Decoding text">
+    </main>
+    <main id="main2">
+        <div>
+            <h1 id="encode_value">Encode</h1>
+            <button id="copy"><ion-icon name="copy-outline"></ion-icon></button>
+        </div>
+        <div>
+            <h1 id="decode_value">Decode</h1>
+            <button id="copy2"><ion-icon name="copy-outline"></ion-icon></button>
+        </div>
+    </main>
+    <h1 id="copied">copied</h1>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
